@@ -13,7 +13,9 @@ spec.frameworks = 'SystemConfiguration', 'AudioToolbox', 'UserNotifications', 'I
 spec.ios.deployment_target = '10.0'
 spec.requires_arc = true
 spec.source = { :git => "https://github.com/helpcrunch/helpcrunchsdk-ios.git", :tag => "#{spec.version}" }
-
+spec.pod_target_xcconfig = {
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
 spec.source_files = 'HelpCrunchSDK.framework/Headers/*.h'
 spec.public_header_files = 'HelpCrunchSDK.framework/Headers/*.h'
 spec.ios.vendored_frameworks = 'HelpCrunchSDK.framework'
