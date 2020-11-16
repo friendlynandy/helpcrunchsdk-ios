@@ -9,6 +9,8 @@ spec.authors = { "HelpCrunchSDK" => 'indo@helpcrunch.com' }
 spec.swift_version = '4.0'
 
 spec.frameworks = 'SystemConfiguration', 'AudioToolbox', 'UserNotifications', 'ImageIO'
+spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
 spec.ios.deployment_target = '10.0'
 spec.requires_arc = true
